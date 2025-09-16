@@ -65,7 +65,8 @@ class LoginViewController: UIViewController {
         
         // Add authentication logic here (e.g., API call)
         print("Logging in with email: \(email) and password: \(password)")
-        showAlert(title: "Success", message: "Logged in successfully.")
+        let healthVC = HealthDataViewController()
+        navigationController?.pushViewController(healthVC, animated: true)
     }
     
     private func setupSubviews() {
