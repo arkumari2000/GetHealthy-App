@@ -28,14 +28,7 @@ class LoginViewController: UIViewController {
         return tf
     }()
     
-    private let loginButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Login", for: .normal)
-        btn.backgroundColor = .systemBlue
-        btn.setTitleColor(.white, for: .normal)
-        btn.layer.cornerRadius = 5
-        return btn
-    }()
+    private let loginButton = GHButton(backgroundColor: .systemBlue, title: "Login")
     
     private let signUpButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -65,7 +58,7 @@ class LoginViewController: UIViewController {
         
         // Add authentication logic here (e.g., API call)
         print("Logging in with email: \(email) and password: \(password)")
-        let healthVC = HealthDataViewController()
+        let healthVC = HealthDataVC()
         navigationController?.pushViewController(healthVC, animated: true)
     }
     
@@ -76,7 +69,7 @@ class LoginViewController: UIViewController {
         }
         
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
@@ -159,7 +152,7 @@ class SignUpViewController: UIViewController {
         }
         
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
